@@ -1,0 +1,21 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Deploy to Vercel
+        uses: amondnet/vercel-action@v21
+        with:
+          vercel-token: ${{ FYfKkQsB1RtaWzfkv8H4z4In }}
+          vercel-org-id: aimanymous-projects
+          vercel-project-id: prj_A2gCpyiAVg9Ot1fK1Izr4p8TJdJr

@@ -8,11 +8,24 @@ const getTickets = async () => {
     return res.json();
   } catch (error) {
     console.log("Failed to get the Tickets", error);
+    return null; // Return a default value or handle the error appropriately
   }
 };
 
 const Dashboard = async () => {
-  const { tickets } = await getTickets();
+  const result = await getTickets();
+
+  if (!result) {
+    // Handle the case where getTickets failed
+    return <div>Error loading tickets</div>;
+  }
+
+  const { tickets } = result;
+
+  if (!tickets) {
+    // Handle the case where tickets is undefined or null
+    return <div>No tickets available</div>;
+  }
 
   const uniqueCategories = [
     ...new Set(tickets?.map(({ category }) => category)),
