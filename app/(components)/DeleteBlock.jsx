@@ -9,7 +9,7 @@ const DeleteBlock = ({ id }) => {
 
   const deleteTicket = async () => {
     const res = await fetch(
-      `http://ticket-app-git-secondtry-aimanymous-projects.vercel.app:3000/api/Tickets/${id}`,
+      `https://ticket-app-git-secondtry-aimanymous-projects.vercel.app:3000/api/Tickets/${id}`,
       {
         method: "DELETE",
       }
