@@ -18,4 +18,4 @@ jobs:
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: aimanymous-projects
-          vercel-project-id: prj_A2gCpyiAVg9Ot1fK1Izr4p8TJdJr
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
